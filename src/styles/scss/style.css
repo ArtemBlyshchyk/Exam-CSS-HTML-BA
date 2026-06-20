@@ -462,7 +462,9 @@ body {
   margin-bottom: 32px;
 }
 
-.why__content button {
+.why__content button,
+.bookNow__second-card button,
+.bookNow__first-card button {
   width: 213px;
   height: 60px;
   background-color: rgb(83, 115, 253);
@@ -470,6 +472,14 @@ body {
   font-size: 16px;
   line-height: 1.25;
   letter-spacing: 7%;
+  transition: background 0.3s;
+}
+.why__content button:hover, .why__content button:focus,
+.bookNow__second-card button:hover,
+.bookNow__second-card button:focus,
+.bookNow__first-card button:hover,
+.bookNow__first-card button:focus {
+  background: rgb(88, 111, 217);
 }
 
 .why__images-container {
@@ -490,6 +500,10 @@ body {
 
 .steps {
   background-color: rgb(51, 51, 51);
+  height: 306px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .steps__list {
@@ -524,16 +538,171 @@ body {
 
 .bookNow__hotel-zone {
   background-image: url("../../images/BookNowHotelBackground.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 684px;
 }
 
 .bookNow__nature-zone {
   background-image: url("../../images/BookNowNatureBackground.png");
+}
+
+.bookNow__hotel-zone,
+.bookNow__nature-zone {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 684px;
+  padding-top: 220px;
+}
+
+.bookNow__hotel-zone .bookNow__first-card,
+.bookNow__nature-zone .bookNow__second-card {
+  width: 648px;
+  height: 344px;
+  background-color: rgba(35, 35, 35, 0.9);
+  padding: 44px 32px;
+}
+
+.bookNow__first-card span,
+.bookNow__second-card span {
+  display: inline-block;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.bookNow__first-card h2,
+.bookNow__second-card h2 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.bookNow__first-card button,
+.bookNow__second-card button {
+  margin-top: 24px;
+}
+
+.bookNow__nature-zone .container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tourists {
+  background-image: url("../../images/TouristBackground.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 680px;
+}
+
+.tourists .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.tourists__review {
+  display: flex;
+}
+
+.tourists__review img {
+  width: 440px;
+  height: 280px;
+}
+
+.turists__review-text {
+  height: 280px;
+  padding-left: 60px;
+  width: 880px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.turists__review-text h3 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+
+.turists__review-text-icon {
+  width: 20px;
+  height: 20px;
+  color: rgb(83, 115, 253);
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.footer {
+  background-color: rgb(0, 0, 0);
+  height: 268px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__logo {
+  width: 168px;
+  height: 28px;
+  margin-bottom: 8px;
+}
+
+.footer h2 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: 20%;
+  margin-bottom: 20px;
+}
+
+.footer__social-list {
+  width: 275px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__social-list li:nth-child(1) svg {
+  width: 20px;
+  height: 32px;
+}
+
+.footer__social-list li:nth-child(2) svg {
+  width: 32px;
+  height: 32px;
+}
+
+.footer__social-list li:nth-child(3) svg {
+  width: 28px;
+  height: 32px;
+}
+
+.footer__social-list li:nth-child(4) svg {
+  width: 36px;
+  height: 32px;
+}
+
+.footer__social-list li:nth-child(5) svg {
+  width: 31px;
+  height: 32px;
+}
+
+.footer__social-list a {
+  cursor: pointer;
+}
+
+.footer__social-list svg {
+  transition: color 0.3s ease;
+}
+
+.footer__social-list a:hover svg,
+.footer__social-list a:focus svg {
+  color: rgb(83, 115, 253);
 }/*# sourceMappingURL=style.css.map */
