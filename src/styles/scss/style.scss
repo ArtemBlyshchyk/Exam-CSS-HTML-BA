@@ -1,0 +1,318 @@
+@use "variables" as *;
+@use "reset" as *;
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.75;
+  letter-spacing: 10%;
+  color: rgba(255, 255, 255, 1);
+}
+
+.aleo {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1320px;
+  width: 100%;
+}
+
+// ====================HEADER==========================
+
+// svg {
+//   color: black;
+// }
+.header__wrapper {
+  width: 100%;
+  background-image: url("../../images/HeaderBackground.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 862px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  gap: 211px;
+}
+
+.header__search-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__search {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 647px;
+  height: 60px;
+
+  //   margin: 211px;
+}
+
+.header__search-input {
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 36px;
+  padding-right: 334px;
+  //   border: 1px solid #ccc;
+  border-right: none;
+  outline: none;
+}
+
+.header__title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.08;
+  letter-spacing: 0%;
+
+  margin-bottom: 8px;
+
+  text-transform: uppercase;
+}
+
+.header__slogan {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.27;
+  letter-spacing: 31%;
+
+  margin-bottom: 48px;
+}
+
+.header__search-btn {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 16px 24px;
+
+  width: 139px;
+  height: 52px;
+
+  border: 1px solid #ccc;
+  background: rgba(83, 115, 253, 1);
+  cursor: pointer;
+
+  transition: background 0.3s;
+
+  &:hover,
+  &:focus {
+    background: rgb(88, 111, 217);
+  }
+}
+
+.icon {
+  color: rgba(255, 255, 255, 1);
+}
+
+.header__search-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.header__search-btn span {
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 1);
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: 10%;
+}
+
+.header__scroll-down-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  color: inherit;
+  padding: 0;
+}
+
+.header__scroll-down-wrapper span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: 20%;
+}
+
+.header__scroll-down-icon {
+  width: 14px;
+  height: 16px;
+}
+
+// ======================NAVIGATION====================
+.navigation {
+  background-color: rgba(83, 115, 253, 1);
+  height: 84px;
+}
+
+.navigation .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  width: 168px;
+  height: 20px;
+}
+
+.navigation__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.navigation__list a {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: 10%;
+
+  text-transform: uppercase;
+}
+
+// ===========================SECTION WHY==========================
+.why {
+  background-image: url("../../images/WhyBackground.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  height: 704px;
+}
+
+.why .container {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 112px;
+  align-items: center;
+
+  height: 100%;
+}
+
+.why__content {
+  width: 648px;
+}
+
+.why__content h2 {
+  margin-bottom: 24px;
+}
+
+.why__content p {
+  margin-bottom: 32px;
+}
+
+.why__content button {
+  width: 213px;
+  height: 60px;
+
+  background-color: rgba(83, 115, 253, 1);
+
+  text-transform: uppercase;
+
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 7%;
+}
+
+.why__images-container {
+  width: 424px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.why__images-container img {
+  width: 350px;
+  height: 220px;
+}
+
+.why__images-container img:last-child {
+  align-self: flex-end;
+}
+
+// =============================STEPS SECTION=====================
+.steps {
+  background-color: rgba(51, 51, 51, 1);
+}
+
+.steps__list {
+  display: flex;
+}
+
+.steps__list li {
+  width: 424px;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.steps__list li svg {
+  width: 64px;
+  height: 64px;
+}
+
+.steps__list li:nth-child(1) svg {
+  color: rgba(83, 115, 253, 1);
+}
+
+.steps__list li:nth-child(2) svg {
+  color: rgba(255, 99, 99, 1);
+}
+
+.steps__list li:nth-child(3) svg {
+  color: rgba(0, 162, 255, 1);
+}
+
+// ==========================BOOKNOW SECTION=====================
+.bookNow__hotel-zone {
+  background-image: url("../../images/BookNowHotelBackground.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 684px;
+}
+
+.bookNow__nature-zone {
+  background-image: url("../../images/BookNowNatureBackground.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 684px;
+}
