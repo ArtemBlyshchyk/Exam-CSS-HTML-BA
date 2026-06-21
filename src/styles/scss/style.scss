@@ -27,9 +27,6 @@ body {
 
 // ====================HEADER==========================
 
-// svg {
-//   color: black;
-// }
 .header__wrapper {
   width: 100%;
   background-image: url("../../images/HeaderBackground.png");
@@ -61,8 +58,6 @@ body {
   position: relative;
   width: 647px;
   height: 60px;
-
-  //   margin: 211px;
 }
 
 .header__search-input {
@@ -72,20 +67,18 @@ body {
   padding-bottom: 20px;
   padding-left: 36px;
   padding-right: 334px;
-  //   border: 1px solid #ccc;
   border-right: none;
   outline: none;
 }
 
-.header__title {
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 1.08;
-  letter-spacing: 0%;
-
+.header__search-wrapper a {
   margin-bottom: 8px;
+}
 
-  text-transform: uppercase;
+.header__logo {
+  width: 301px;
+  height: 52px;
+  margin: 0 auto;
 }
 
 .header__slogan {
@@ -153,6 +146,13 @@ body {
 
   color: inherit;
   padding: 0;
+
+  transition: transform 0.3s ease;
+}
+
+.header__scroll-down-wrapper:hover,
+.header__scroll-down-wrapper:focus {
+  transform: scale(1.1);
 }
 
 .header__scroll-down-wrapper span {
@@ -193,12 +193,24 @@ body {
 }
 
 .navigation__list a {
+  display: inline-block;
   text-decoration: none;
   font-size: 14px;
   line-height: 1.43;
   letter-spacing: 10%;
 
   text-transform: uppercase;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.navigation__list a:hover,
+.navigation__list a:focus {
+  color: bisque;
+  text-decoration: underline;
+  transform: scale(1.1);
 }
 
 // ===========================SECTION WHY==========================
