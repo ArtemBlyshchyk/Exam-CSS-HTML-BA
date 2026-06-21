@@ -264,461 +264,447 @@ q::after {
 
 body {
   font-family: "Josefin Sans", sans-serif;
-  font-weight: 300;
   font-size: 16px;
+  font-weight: 300;
   line-height: 1.75;
-  letter-spacing: 10%;
-  color: rgb(255, 255, 255);
+  letter-spacing: 0.1em;
+  color: #fff;
 }
 
 .aleo {
+  font-family: "Aleo", serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 1.11;
-  letter-spacing: 0%;
-  color: rgb(255, 255, 255);
+  color: #fff;
 }
 
 .container {
-  margin: 0 auto;
-  max-width: 1320px;
   width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
 .header__wrapper {
-  width: 100%;
   background-image: url("../../images/HeaderBackground.png");
-  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 862px;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 862px;
   text-align: center;
   gap: 211px;
 }
-
 .header__search-wrapper {
   display: flex;
   flex-direction: column;
 }
-
-.header__search {
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 647px;
-  height: 60px;
-}
-
-.header__search-input {
-  width: 100%;
-  height: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 36px;
-  padding-right: 334px;
-  border-right: none;
-  outline: none;
-}
-
 .header__search-wrapper a {
   margin-bottom: 8px;
 }
-
 .header__logo {
   width: 301px;
   height: 52px;
   margin: 0 auto;
 }
-
 .header__slogan {
-  font-weight: 400;
   font-size: 22px;
+  font-weight: 400;
   line-height: 1.27;
-  letter-spacing: 31%;
+  letter-spacing: 0.31em;
   margin-bottom: 48px;
 }
-
+.header__search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 647px;
+  height: 60px;
+}
+.header__search-input {
+  width: 100%;
+  height: 100%;
+  padding: 20px 334px 20px 36px;
+  outline: none;
+  border: none;
+  border-right: none;
+}
 .header__search-btn {
   position: absolute;
   top: 50%;
-  right: 5px;
   transform: translateY(-50%);
+  right: 5px;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 12px;
-  padding: 16px 24px;
   width: 139px;
   height: 52px;
+  background: #5373fd;
+  color: #fff;
   border: 1px solid #ccc;
-  background: rgb(83, 115, 253);
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 .header__search-btn:hover, .header__search-btn:focus {
   background: rgb(88, 111, 217);
 }
-
-.icon {
-  color: rgb(255, 255, 255);
+.header__search-btn span {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
-
 .header__search-icon {
   width: 16px;
   height: 16px;
 }
-
-.header__search-btn span {
-  text-transform: uppercase;
-  color: rgb(255, 255, 255);
-  font-size: 14px;
-  line-height: 1.43;
-  letter-spacing: 10%;
-}
-
 .header__scroll-down-wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  transition: transform 0.3s ease;
+}
+.header__scroll-down-wrapper:hover, .header__scroll-down-wrapper:focus {
+  transform: scale(1.1);
+}
+.header__scroll-down-wrapper {
   gap: 4px;
   background: transparent;
   border: none;
-  cursor: pointer;
   color: inherit;
-  padding: 0;
-  transition: transform 0.3s ease;
+  cursor: pointer;
 }
-
-.header__scroll-down-wrapper:hover,
-.header__scroll-down-wrapper:focus {
-  transform: scale(1.1);
-}
-
 .header__scroll-down-wrapper span {
-  font-weight: 400;
   font-size: 14px;
+  font-weight: 400;
   line-height: 1.43;
-  letter-spacing: 20%;
+  letter-spacing: 0.2em;
 }
-
 .header__scroll-down-icon {
   width: 14px;
   height: 16px;
 }
 
-.navigation {
-  background-color: rgb(83, 115, 253);
-  height: 84px;
+.icon {
+  color: #fff;
 }
 
+.navigation {
+  height: 84px;
+  background: #5373fd;
+}
 .navigation .container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   height: 100%;
 }
-
-.logo {
+.navigation .logo {
   width: 168px;
   height: 20px;
 }
-
 .navigation__list {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 40px;
 }
-
 .navigation__list a {
   display: inline-block;
   text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.navigation__list a:hover, .navigation__list a:focus {
+  color: bisque;
+  transform: scale(1.1);
+  text-decoration: underline;
+}
+.navigation__list a {
   font-size: 14px;
   line-height: 1.43;
-  letter-spacing: 10%;
-  text-transform: uppercase;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.navigation__list a:hover,
-.navigation__list a:focus {
-  color: bisque;
-  text-decoration: underline;
-  transform: scale(1.1);
+  letter-spacing: 0.1em;
 }
 
 .why {
   background-image: url("../../images/WhyBackground.png");
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
   height: 704px;
 }
-
 .why .container {
   display: flex;
   justify-content: space-between;
-  padding-right: 112px;
   align-items: center;
   height: 100%;
+  padding-right: 112px;
 }
-
 .why__content {
   width: 648px;
 }
-
 .why__content h2 {
   margin-bottom: 24px;
 }
-
 .why__content p {
   margin-bottom: 32px;
 }
-
-.why__content button,
-.bookNow__second-card button,
-.bookNow__first-card button {
+.why__content button {
   width: 213px;
   height: 60px;
-  background-color: rgb(83, 115, 253);
+  background: #5373fd;
+  color: #fff;
+  border: none;
+  cursor: pointer;
   text-transform: uppercase;
   font-size: 16px;
   line-height: 1.25;
-  letter-spacing: 7%;
-  transition: background 0.3s;
+  letter-spacing: 0.07em;
+  transition: background 0.3s ease;
 }
-.why__content button:hover, .why__content button:focus,
-.bookNow__second-card button:hover,
-.bookNow__second-card button:focus,
-.bookNow__first-card button:hover,
-.bookNow__first-card button:focus {
+.why__content button:hover, .why__content button:focus {
   background: rgb(88, 111, 217);
 }
-
 .why__images-container {
-  width: 424px;
   display: flex;
   flex-direction: column;
+  width: 424px;
   gap: 16px;
 }
-
 .why__images-container img {
   width: 350px;
   height: 220px;
 }
-
 .why__images-container img:last-child {
   align-self: flex-end;
 }
 
 .steps {
-  background-color: rgb(51, 51, 51);
-  height: 306px;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 306px;
+  background: #333;
 }
-
 .steps__list {
   display: flex;
 }
-
 .steps__list li {
-  width: 424px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 424px;
   gap: 20px;
 }
-
 .steps__list li svg {
   width: 64px;
   height: 64px;
 }
-
 .steps__list li:nth-child(1) svg {
-  color: rgb(83, 115, 253);
+  color: #5373fd;
 }
-
 .steps__list li:nth-child(2) svg {
-  color: rgb(255, 99, 99);
+  color: #ff6363;
 }
-
 .steps__list li:nth-child(3) svg {
-  color: rgb(0, 162, 255);
+  color: #00a2ff;
 }
 
 .bookNow__hotel-zone {
   background-image: url("../../images/BookNowHotelBackground.png");
-}
-
-.bookNow__nature-zone {
-  background-image: url("../../images/BookNowNatureBackground.png");
-}
-
-.bookNow__hotel-zone,
-.bookNow__nature-zone {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 684px;
   padding-top: 220px;
 }
-
-.bookNow__hotel-zone .bookNow__first-card,
-.bookNow__nature-zone .bookNow__second-card {
+.bookNow__hotel-zone .bookNow__first-card {
+  background: rgba(35, 35, 35, 0.9);
+  padding: 44px 32px;
   width: 648px;
   height: 344px;
-  background-color: rgba(35, 35, 35, 0.9);
-  padding: 44px 32px;
 }
-
-.bookNow__first-card span,
-.bookNow__second-card span {
+.bookNow__hotel-zone .bookNow__first-card span {
   display: inline-block;
   font-size: 20px;
   margin-bottom: 16px;
 }
-
-.bookNow__first-card h2,
-.bookNow__second-card h2 {
-  font-weight: 400;
+.bookNow__hotel-zone .bookNow__first-card h2 {
   font-size: 20px;
+  font-weight: 400;
   line-height: 1.4;
-  letter-spacing: 0%;
   text-transform: uppercase;
   margin-bottom: 16px;
 }
-
-.bookNow__first-card button,
-.bookNow__second-card button {
+.bookNow__hotel-zone .bookNow__first-card button {
+  width: 213px;
+  height: 60px;
+  background: #5373fd;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.07em;
+  transition: background 0.3s ease;
+}
+.bookNow__hotel-zone .bookNow__first-card button:hover, .bookNow__hotel-zone .bookNow__first-card button:focus {
+  background: rgb(88, 111, 217);
+}
+.bookNow__hotel-zone .bookNow__first-card button {
   margin-top: 24px;
 }
-
+.bookNow__nature-zone {
+  background-image: url("../../images/BookNowNatureBackground.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 684px;
+  padding-top: 220px;
+}
 .bookNow__nature-zone .container {
   display: flex;
   justify-content: flex-end;
+}
+.bookNow__nature-zone .bookNow__second-card {
+  background: rgba(35, 35, 35, 0.9);
+  padding: 44px 32px;
+  width: 648px;
+  height: 344px;
+}
+.bookNow__nature-zone .bookNow__second-card span {
+  display: inline-block;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+.bookNow__nature-zone .bookNow__second-card h2 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.bookNow__nature-zone .bookNow__second-card button {
+  width: 213px;
+  height: 60px;
+  background: #5373fd;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.07em;
+  transition: background 0.3s ease;
+}
+.bookNow__nature-zone .bookNow__second-card button:hover, .bookNow__nature-zone .bookNow__second-card button:focus {
+  background: rgb(88, 111, 217);
+}
+.bookNow__nature-zone .bookNow__second-card button {
+  margin-top: 24px;
 }
 
 .tourists {
   background-image: url("../../images/TouristBackground.png");
   background-position: center;
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
   height: 680px;
 }
-
 .tourists .container {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
   gap: 60px;
 }
-
 .tourists__review {
   display: flex;
 }
-
 .tourists__review img {
   width: 440px;
   height: 280px;
 }
-
-.turists__review-text {
+.tourists__review .turists__review-text {
+  width: 880px;
   height: 280px;
   padding-left: 60px;
-  width: 880px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
 }
-
-.turists__review-text h3 {
-  font-weight: 400;
+.tourists__review .turists__review-text h3 {
   font-size: 20px;
-  line-height: 1.4;
-  letter-spacing: 0%;
+  font-weight: 400;
   text-transform: uppercase;
 }
-
-.turists__review-text-icon {
+.tourists__review .turists__review-text svg {
   width: 20px;
   height: 20px;
-  color: rgb(83, 115, 253);
-  display: inline-block;
+  color: #5373fd;
   margin-right: 6px;
 }
 
 .footer {
-  background-color: rgb(0, 0, 0);
-  height: 268px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 268px;
+  background: #000;
 }
-
 .footer__logo {
   width: 168px;
   height: 28px;
   margin-bottom: 8px;
 }
-
 .footer h2 {
-  font-weight: 400;
   font-size: 14px;
+  font-weight: 400;
   line-height: 1.43;
-  letter-spacing: 20%;
+  letter-spacing: 0.2em;
   margin-bottom: 20px;
 }
-
 .footer__social-list {
   width: 275px;
   display: flex;
   justify-content: space-between;
 }
-
+.footer__social-list li svg {
+  transition: color 0.3s ease;
+}
 .footer__social-list li:nth-child(1) svg {
   width: 20px;
   height: 32px;
 }
-
 .footer__social-list li:nth-child(2) svg {
   width: 32px;
   height: 32px;
 }
-
 .footer__social-list li:nth-child(3) svg {
   width: 28px;
   height: 32px;
 }
-
 .footer__social-list li:nth-child(4) svg {
   width: 36px;
   height: 32px;
 }
-
 .footer__social-list li:nth-child(5) svg {
   width: 31px;
   height: 32px;
 }
-
-.footer__social-list a {
+.footer__social-list li a {
   cursor: pointer;
 }
-
-.footer__social-list svg {
-  transition: color 0.3s ease;
-}
-
-.footer__social-list a:hover svg,
-.footer__social-list a:focus svg {
-  color: rgb(83, 115, 253);
+.footer__social-list li a:hover svg, .footer__social-list li a:focus svg {
+  color: #5373fd;
 }/*# sourceMappingURL=style.css.map */

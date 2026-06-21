@@ -1,1 +1,116 @@
+// =========================================
+// COLORS
+// =========================================
 
+$color-white: #fff;
+$color-black: #000;
+
+$color-primary: #5373fd;
+$color-primary-hover: rgb(88, 111, 217);
+
+$color-dark: #333;
+$color-card: rgba(35, 35, 35, 0.9);
+
+$color-border: #ccc;
+
+$color-red: #ff6363;
+$color-blue: #00a2ff;
+
+$color-link-hover: bisque;
+
+// =========================================
+// TYPOGRAPHY
+// =========================================
+
+$font-main: "Josefin Sans", sans-serif;
+$font-second: "Aleo", serif;
+
+$font-size-base: 16px;
+$font-size-small: 14px;
+$font-size-medium: 20px;
+$font-size-large: 22px;
+$font-size-title: 36px;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+// =========================================
+// LINE HEIGHT
+// =========================================
+
+$line-height-base: 1.75;
+$line-height-small: 1.43;
+$line-height-medium: 1.4;
+$line-height-large: 1.27;
+$line-height-title: 1.11;
+
+// =========================================
+// LETTER SPACING
+// =========================================
+
+$letter-spacing-small: 0.07em;
+$letter-spacing-base: 0.1em;
+$letter-spacing-medium: 0.2em;
+$letter-spacing-large: 0.31em;
+
+// =========================================
+// LAYOUT
+// =========================================
+
+$container-width: 1320px;
+
+$header-height: 862px;
+$navigation-height: 84px;
+$why-height: 704px;
+$steps-height: 306px;
+$book-height: 684px;
+$tourists-height: 680px;
+$footer-height: 268px;
+
+// =========================================
+// COMPONENTS
+// =========================================
+
+$button-width: 213px;
+$button-height: 60px;
+
+$search-width: 647px;
+$search-height: 60px;
+
+$search-button-width: 139px;
+$search-button-height: 52px;
+
+// =========================================
+// SPACING
+// =========================================
+
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 20px;
+$spacing-xl: 24px;
+$spacing-2xl: 32px;
+$spacing-3xl: 40px;
+$spacing-4xl: 48px;
+$spacing-5xl: 60px;
+
+// =========================================
+// BORDER
+// =========================================
+
+$border-default: 1px solid $color-border;
+
+// =========================================
+// TRANSITIONS
+// =========================================
+
+$transition: 0.3s ease;
+
+// =========================================
+// Z-INDEX
+// =========================================
+
+$z-header: 100;
+$z-navigation: 200;
+$z-modal: 1000;

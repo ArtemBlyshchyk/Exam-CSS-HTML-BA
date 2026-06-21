@@ -1,505 +1,441 @@
 @use "variables" as *;
+@use "mixins" as *;
 @use "reset" as *;
 
-body {
-  font-family: "Josefin Sans", sans-serif;
+// ======================================================
+// GLOBAL
+// ======================================================
 
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 1.75;
-  letter-spacing: 10%;
-  color: rgba(255, 255, 255, 1);
+body {
+  font-family: $font-main;
+  font-size: $font-size-base;
+  font-weight: $font-weight-light;
+  line-height: $line-height-base;
+  letter-spacing: $letter-spacing-base;
+  color: $color-white;
 }
 
 .aleo {
-  font-weight: 400;
-  font-size: 36px;
-  line-height: 1.11;
-  letter-spacing: 0%;
-  color: rgba(255, 255, 255, 1);
+  @include aleo-title;
 }
 
 .container {
-  margin: 0 auto;
-  max-width: 1320px;
   width: 100%;
-}
-
-// ====================HEADER==========================
-
-.header__wrapper {
-  width: 100%;
-  background-image: url("../../images/HeaderBackground.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  height: 862px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  align-items: center;
-
-  text-align: center;
-
-  gap: 211px;
-}
-
-.header__search-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.header__search {
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 647px;
-  height: 60px;
-}
-
-.header__search-input {
-  width: 100%;
-  height: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 36px;
-  padding-right: 334px;
-  border-right: none;
-  outline: none;
-}
-
-.header__search-wrapper a {
-  margin-bottom: 8px;
-}
-
-.header__logo {
-  width: 301px;
-  height: 52px;
+  max-width: $container-width;
   margin: 0 auto;
 }
 
-.header__slogan {
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 1.27;
-  letter-spacing: 31%;
+// ======================================================
+// HEADER
+// ======================================================
 
-  margin-bottom: 48px;
-}
+.header {
+  &__wrapper {
+    @include background("../../images/HeaderBackground.png");
+    @include flex-column-center;
 
-.header__search-btn {
-  position: absolute;
-  top: 50%;
-  right: 5px;
-  transform: translateY(-50%);
+    height: $header-height;
+    text-align: center;
+    gap: 211px;
+  }
 
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  &__search-wrapper {
+    @include flex-column;
 
-  padding: 16px 24px;
+    a {
+      margin-bottom: $spacing-sm;
+    }
+  }
 
-  width: 139px;
-  height: 52px;
+  &__logo {
+    width: 301px;
+    height: 52px;
+    margin: 0 auto;
+  }
 
-  border: 1px solid #ccc;
-  background: rgba(83, 115, 253, 1);
-  cursor: pointer;
+  &__slogan {
+    font-size: $font-size-large;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-large;
+    letter-spacing: $letter-spacing-large;
 
-  transition: background 0.3s;
+    margin-bottom: $spacing-4xl;
+  }
 
-  &:hover,
-  &:focus {
-    background: rgb(88, 111, 217);
+  &__search {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: $search-width;
+    height: $search-height;
+  }
+
+  &__search-input {
+    @include input;
+  }
+
+  &__search-btn {
+    @include search-button;
+
+    span {
+      color: $color-white;
+      font-size: $font-size-small;
+      line-height: $line-height-small;
+      letter-spacing: $letter-spacing-base;
+      text-transform: uppercase;
+    }
+  }
+
+  &__search-icon {
+    @include icon-size(16px, 16px);
+  }
+
+  &__scroll-down-wrapper {
+    @include flex-column-center;
+    @include scale-hover;
+
+    gap: $spacing-xs;
+
+    background: transparent;
+    border: none;
+    color: inherit;
+
+    cursor: pointer;
+
+    span {
+      font-size: $font-size-small;
+      font-weight: $font-weight-normal;
+      line-height: $line-height-small;
+      letter-spacing: $letter-spacing-medium;
+    }
+  }
+
+  &__scroll-down-icon {
+    @include icon-size(14px, 16px);
   }
 }
 
 .icon {
-  color: rgba(255, 255, 255, 1);
+  color: $color-white;
 }
 
-.header__search-icon {
-  width: 16px;
-  height: 16px;
-}
+// ======================================================
+// NAVIGATION
+// ======================================================
 
-.header__search-btn span {
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 1);
-  font-size: 14px;
-  line-height: 1.43;
-  letter-spacing: 10%;
-}
-
-.header__scroll-down-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-
-  background: transparent;
-  border: none;
-  cursor: pointer;
-
-  color: inherit;
-  padding: 0;
-
-  transition: transform 0.3s ease;
-}
-
-.header__scroll-down-wrapper:hover,
-.header__scroll-down-wrapper:focus {
-  transform: scale(1.1);
-}
-
-.header__scroll-down-wrapper span {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.43;
-  letter-spacing: 20%;
-}
-
-.header__scroll-down-icon {
-  width: 14px;
-  height: 16px;
-}
-
-// ======================NAVIGATION====================
 .navigation {
-  background-color: rgba(83, 115, 253, 1);
-  height: 84px;
-}
+  height: $navigation-height;
+  background: $color-primary;
 
-.navigation .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-}
+  .container {
+    @include flex-between;
 
-.logo {
-  width: 168px;
-  height: 20px;
-}
+    height: 100%;
+  }
 
-.navigation__list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-}
+  .logo {
+    width: 168px;
+    height: 20px;
+  }
 
-.navigation__list a {
-  display: inline-block;
-  text-decoration: none;
-  font-size: 14px;
-  line-height: 1.43;
-  letter-spacing: 10%;
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
 
-  text-transform: uppercase;
+    a {
+      @include nav-link;
 
-  transition:
-    transform 0.3s ease,
-    color 0.3s ease;
-}
-
-.navigation__list a:hover,
-.navigation__list a:focus {
-  color: bisque;
-  text-decoration: underline;
-  transform: scale(1.1);
-}
-
-// ===========================SECTION WHY==========================
-.why {
-  background-image: url("../../images/WhyBackground.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  height: 704px;
-}
-
-.why .container {
-  display: flex;
-  justify-content: space-between;
-  padding-right: 112px;
-  align-items: center;
-
-  height: 100%;
-}
-
-.why__content {
-  width: 648px;
-}
-
-.why__content h2 {
-  margin-bottom: 24px;
-}
-
-.why__content p {
-  margin-bottom: 32px;
-}
-
-.why__content button,
-.bookNow__second-card button,
-.bookNow__first-card button {
-  width: 213px;
-  height: 60px;
-
-  background-color: rgba(83, 115, 253, 1);
-
-  text-transform: uppercase;
-
-  font-size: 16px;
-  line-height: 1.25;
-  letter-spacing: 7%;
-
-  transition: background 0.3s;
-
-  &:hover,
-  &:focus {
-    background: rgb(88, 111, 217);
+      font-size: $font-size-small;
+      line-height: $line-height-small;
+      letter-spacing: $letter-spacing-base;
+    }
   }
 }
 
-.why__images-container {
-  width: 424px;
+// ======================================================
+// WHY SECTION
+// ======================================================
 
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.why {
+  @include background("../../images/WhyBackground.png");
+
+  height: $why-height;
+
+  .container {
+    @include flex-between;
+
+    height: 100%;
+
+    padding-right: 112px;
+  }
+
+  &__content {
+    width: 648px;
+
+    h2 {
+      margin-bottom: $spacing-xl;
+    }
+
+    p {
+      margin-bottom: $spacing-2xl;
+    }
+
+    button {
+      @include button-primary;
+    }
+  }
+
+  &__images-container {
+    @include flex-column;
+
+    width: 424px;
+    gap: $spacing-md;
+
+    img {
+      width: 350px;
+      height: 220px;
+
+      &:last-child {
+        align-self: flex-end;
+      }
+    }
+  }
 }
 
-.why__images-container img {
-  width: 350px;
-  height: 220px;
-}
+// ======================================================
+// STEPS SECTION
+// ======================================================
 
-.why__images-container img:last-child {
-  align-self: flex-end;
-}
-
-// =============================STEPS SECTION=====================
 .steps {
-  background-color: rgba(51, 51, 51, 1);
-  height: 306px;
+  @include flex-center;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: $steps-height;
+  background: $color-dark;
+
+  &__list {
+    display: flex;
+
+    li {
+      @include flex-column-center;
+
+      width: 424px;
+      gap: $spacing-lg;
+
+      svg {
+        @include icon-size(64px, 64px);
+      }
+
+      &:nth-child(1) svg {
+        color: $color-primary;
+      }
+
+      &:nth-child(2) svg {
+        color: $color-red;
+      }
+
+      &:nth-child(3) svg {
+        color: $color-blue;
+      }
+    }
+  }
 }
 
-.steps__list {
-  display: flex;
+// ======================================================
+// BOOK NOW SECTION
+// ======================================================
+
+.bookNow {
+  &__hotel-zone {
+    @include background("../../images/BookNowHotelBackground.png");
+
+    height: $book-height;
+    padding-top: 220px;
+
+    .bookNow__first-card {
+      @include card;
+
+      width: 648px;
+      height: 344px;
+
+      span {
+        display: inline-block;
+        font-size: $font-size-medium;
+        margin-bottom: $spacing-md;
+      }
+
+      h2 {
+        font-size: $font-size-medium;
+        font-weight: $font-weight-normal;
+        line-height: $line-height-medium;
+        text-transform: uppercase;
+
+        margin-bottom: $spacing-md;
+      }
+
+      button {
+        @include button-primary;
+        margin-top: $spacing-xl;
+      }
+    }
+  }
+
+  &__nature-zone {
+    @include background("../../images/BookNowNatureBackground.png");
+
+    height: $book-height;
+    padding-top: 220px;
+
+    .container {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .bookNow__second-card {
+      @include card;
+
+      width: 648px;
+      height: 344px;
+
+      span {
+        display: inline-block;
+        font-size: $font-size-medium;
+        margin-bottom: $spacing-md;
+      }
+
+      h2 {
+        font-size: $font-size-medium;
+        font-weight: $font-weight-normal;
+        line-height: $line-height-medium;
+        text-transform: uppercase;
+
+        margin-bottom: $spacing-md;
+      }
+
+      button {
+        @include button-primary;
+        margin-top: $spacing-xl;
+      }
+    }
+  }
 }
 
-.steps__list li {
-  width: 424px;
-  display: flex;
+// ======================================================
+// TOURISTS SECTION
+// ======================================================
 
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.steps__list li svg {
-  width: 64px;
-  height: 64px;
-}
-
-.steps__list li:nth-child(1) svg {
-  color: rgba(83, 115, 253, 1);
-}
-
-.steps__list li:nth-child(2) svg {
-  color: rgba(255, 99, 99, 1);
-}
-
-.steps__list li:nth-child(3) svg {
-  color: rgba(0, 162, 255, 1);
-}
-
-// ==========================BOOKNOW SECTION=====================
-.bookNow__hotel-zone {
-  background-image: url("../../images/BookNowHotelBackground.png");
-}
-
-.bookNow__nature-zone {
-  background-image: url("../../images/BookNowNatureBackground.png");
-}
-
-.bookNow__hotel-zone,
-.bookNow__nature-zone {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  height: 684px;
-
-  padding-top: 220px;
-}
-
-.bookNow__hotel-zone .bookNow__first-card,
-.bookNow__nature-zone .bookNow__second-card {
-  width: 648px;
-  height: 344px;
-  background-color: rgba(35, 35, 35, 0.9);
-
-  padding: 44px 32px;
-}
-
-.bookNow__first-card span,
-.bookNow__second-card span {
-  display: inline-block;
-  font-size: 20px;
-  margin-bottom: 16px;
-}
-
-.bookNow__first-card h2,
-.bookNow__second-card h2 {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 1.4;
-  letter-spacing: 0%;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-
-.bookNow__first-card button,
-.bookNow__second-card button {
-  margin-top: 24px;
-}
-
-.bookNow__nature-zone .container {
-  display: flex;
-  justify-content: flex-end;
-}
-
-// ==========================TOURISTS SECTION=====================
 .tourists {
-  background-image: url("../../images/TouristBackground.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  @include background("../../images/TouristBackground.png");
 
-  height: 680px;
+  height: $tourists-height;
+
+  .container {
+    @include flex-column-center;
+
+    height: 100%;
+    gap: 60px;
+  }
+
+  &__review {
+    display: flex;
+
+    img {
+      width: 440px;
+      height: 280px;
+    }
+
+    .turists__review-text {
+      width: 880px;
+      height: 280px;
+
+      padding-left: 60px;
+
+      @include flex-column;
+      justify-content: center;
+      gap: $spacing-sm;
+
+      h3 {
+        font-size: $font-size-medium;
+        font-weight: $font-weight-normal;
+        text-transform: uppercase;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+        color: $color-primary;
+        margin-right: 6px;
+      }
+    }
+  }
 }
 
-.tourists .container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;
-}
+// ======================================================
+// FOOTER
+// ======================================================
 
-.tourists__review {
-  display: flex;
-}
-
-.tourists__review img {
-  width: 440px;
-  height: 280px;
-}
-
-.turists__review-text {
-  height: 280px;
-  padding-left: 60px;
-  width: 880px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-}
-
-.turists__review-text h3 {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 1.4;
-  letter-spacing: 0%;
-
-  text-transform: uppercase;
-}
-
-.turists__review-text-icon {
-  width: 20px;
-  height: 20px;
-  color: rgba(83, 115, 253, 1);
-  display: inline-block;
-  margin-right: 6px;
-}
-
-// ============================FOOTER============================
 .footer {
-  background-color: rgba(0, 0, 0, 1);
-  height: 268px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  @include flex-column-center;
 
-.footer__logo {
-  width: 168px;
-  height: 28px;
-  margin-bottom: 8px;
-}
+  height: $footer-height;
+  background: $color-black;
 
-.footer h2 {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.43;
-  letter-spacing: 20%;
-  margin-bottom: 20px;
-}
+  &__logo {
+    width: 168px;
+    height: 28px;
+    margin-bottom: $spacing-sm;
+  }
 
-.footer__social-list {
-  width: 275px;
-  display: flex;
-  justify-content: space-between;
-}
+  h2 {
+    font-size: $font-size-small;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-small;
+    letter-spacing: $letter-spacing-medium;
 
-.footer__social-list li:nth-child(1) svg {
-  width: 20px;
-  height: 32px;
-}
+    margin-bottom: $spacing-lg;
+  }
 
-.footer__social-list li:nth-child(2) svg {
-  width: 32px;
-  height: 32px;
-}
+  &__social-list {
+    width: 275px;
 
-.footer__social-list li:nth-child(3) svg {
-  width: 28px;
-  height: 32px;
-}
+    display: flex;
+    justify-content: space-between;
 
-.footer__social-list li:nth-child(4) svg {
-  width: 36px;
-  height: 32px;
-}
+    li {
+      svg {
+        transition: color $transition;
+      }
 
-.footer__social-list li:nth-child(5) svg {
-  width: 31px;
-  height: 32px;
-}
+      &:nth-child(1) svg {
+        @include icon-size(20px, 32px);
+      }
 
-.footer__social-list a {
-  cursor: pointer;
-}
+      &:nth-child(2) svg {
+        @include icon-size(32px, 32px);
+      }
 
-.footer__social-list svg {
-  transition: color 0.3s ease;
-}
+      &:nth-child(3) svg {
+        @include icon-size(28px, 32px);
+      }
 
-.footer__social-list a:hover svg,
-.footer__social-list a:focus svg {
-  color: rgba(83, 115, 253, 1);
+      &:nth-child(4) svg {
+        @include icon-size(36px, 32px);
+      }
+
+      &:nth-child(5) svg {
+        @include icon-size(31px, 32px);
+      }
+
+      a {
+        cursor: pointer;
+
+        &:hover svg,
+        &:focus svg {
+          color: $color-primary;
+        }
+      }
+    }
+  }
 }
